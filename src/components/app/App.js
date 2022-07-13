@@ -11,6 +11,7 @@ import NotFound from '../notFound/NotFound';
 import { FaSearch, FaRegBookmark, FaBookmark } from "react-icons/fa";
 
 function App() {
+
   return (
       <BrowserRouter>
           <nav>

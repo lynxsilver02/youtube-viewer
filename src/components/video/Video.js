@@ -1,10 +1,30 @@
 import React, { useState } from 'react'
 import './Video.style.css'
 import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import { useDispatch, useSelector } from 'react-redux';
+import { addBookmarkAction, removeBookmarkAction } from '../../store/store';
 
 export default function Video(props) {
-  const [checked, setChecked] = useState(false);
+  const dispatch = useDispatch();
+  const bookmarks = useSelector(state => state.bookmarks);
 
+  const addBookmark = (video) => {
+    const bookmark = {
+      object: video,
+      id: video.id.videoId
+    }
+    dispatch(addBookmarkAction(bookmark))
+  }
+
+  const removeBookmark = (bookmark) => {
+    dispatch(removeBookmarkAction(bookmark.id.videoId));
+  }
+
+  let flag = false;
+  if (bookmarks.length > 0)
+   bookmarks.map(bookmark => {if (bookmark.id === props.item.id.videoId) flag = true})
+
+  
   const date = (props.item.snippet.publishedAt).toString();
   const re = /\d{4}-\d{2}-\d{2}/;
   const title = (props.item.snippet.title).replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"');
@@ -15,7 +35,11 @@ export default function Video(props) {
         <p className='title'>{title}</p>
         <p className='publishedAt'>Опубликовано {date.match(re)}</p>
       </div>
-      <FaRegBookmark className='bookmark' onClick={(event) => {event.stopPropagation(); setChecked(true)}} />
+      {flag ? 
+        <FaBookmark className='bookmark' onClick={() => removeBookmark(props.item)} />
+        :
+        <FaRegBookmark className='bookmark' onClick={() => addBookmark(props.item)} />
+      }
     </div>
   )
 }
