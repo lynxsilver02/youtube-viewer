@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Modal.style.css'
-import { FaRegBookmark, FaBookmark } from "react-icons/fa";
+import { FaRegBookmark, FaBookmark, FaRegWindowClose } from "react-icons/fa";
 
 export const Modal = props => {
   const [checked, setChecked] = useState(false);
@@ -11,7 +11,7 @@ export const Modal = props => {
   const idURL = props.item.id.videoId;
 
   return (
-    <div className='modal' onClick={props.onClose}>
+    <div className='modal'>
       <div className='modal-content' onClick={event => event.stopPropagation()}>
         <div className='modal-body'>
           <iframe
@@ -26,6 +26,7 @@ export const Modal = props => {
           <p className='description'>{props.item.snippet.description}</p>
         </div>
       </div>
+      <FaRegWindowClose className='close-modal' onClick={props.onClose} />
     </div>
   )
 }
