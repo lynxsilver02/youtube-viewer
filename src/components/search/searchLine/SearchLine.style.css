@@ -1,0 +1,22 @@
+.searchLine {
+  margin: 20px auto;
+  width: 250px;
+  border: 1px solid #DDD;
+  border-radius: 7px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchLine input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 200px;
+}
+
+.icon {
+  padding: 10px;
+  padding-right: 0;
+}

@@ -1,0 +1,42 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 35%;
+  background-color: white;
+}
+
+.modal-body {
+  margin: 3%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-body .title {
+  display: inline-block;
+  font-weight: bold;
+  margin: 3% 1%;
+  width: 80%;
+  white-space: pre-line;
+}
+
+.modal-body .bookmark {
+  float: right;
+  margin: 25px;
+}
+
+.modal-body .description {
+  display: inline-block;
+  width: 100%;
+  font-size: smaller;
+  margin-bottom: 4%;
+  text-align: center;
+}
