@@ -36,9 +36,9 @@ export default function Video(props) {
         <p className='publishedAt'>Опубликовано {date.match(re)}</p>
       </div>
       {flag ? 
-        <FaBookmark className='bookmark' onClick={() => removeBookmark(props.item)} />
+        <FaBookmark className='bookmark' onClick={(event) => {removeBookmark(props.item); event.stopPropagation()}} />
         :
-        <FaRegBookmark className='bookmark' onClick={() => addBookmark(props.item)} />
+        <FaRegBookmark className='bookmark' onClick={(event) => {addBookmark(props.item); event.stopPropagation()}} />
       }
     </div>
   )
