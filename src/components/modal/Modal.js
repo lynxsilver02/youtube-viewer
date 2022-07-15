@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Modal.style.css'
 import { FaRegBookmark, FaBookmark, FaRegWindowClose } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';

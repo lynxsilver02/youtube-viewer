@@ -8,10 +8,9 @@ import {
 import Search from '../search/Search';
 import Bookmarks from '../bookmarks/Bookmarks';
 import NotFound from '../notFound/NotFound';
-import { FaSearch, FaRegBookmark, FaBookmark } from "react-icons/fa";
+import { FaSearch, FaBookmark } from "react-icons/fa";
 
 function App() {
-
   return (
       <BrowserRouter>
           <nav>

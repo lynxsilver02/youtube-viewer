@@ -5,7 +5,6 @@ import Video from '../video/Video';
 import './Search.style.css'
 import { data } from './searchLine/SearchLine';
 
-
 export default function Search() {
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState();

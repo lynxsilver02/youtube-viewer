@@ -1,6 +1,5 @@
 import { createStore } from "redux"
 
-
 const defaultState = {
   bookmarks: [],
   searchLine: ''

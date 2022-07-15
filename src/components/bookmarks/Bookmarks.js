@@ -5,10 +5,8 @@ import Video from '../video/Video';
 
 export default function Bookmarks() {
   const bookmarks = useSelector(state => state.bookmarks);
-
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState(0);
-
 
   return (
     <div>
