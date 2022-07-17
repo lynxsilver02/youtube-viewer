@@ -1,24 +1,19 @@
 import React from 'react'
 import { FaSearch } from "react-icons/fa";
 import './SearchLine.style.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { changeSearchLineAction } from '../../../store/store';
+import { useState } from "react";
 
 export let data = '0'
 
 export const SearchLine = (props) => {
-  const dispatch = useDispatch();
-  const searchLine = useSelector(state => state.searchLine);
-
+  const [srch, setSrch] = useState("");
   const hSubmit = (e) => {
     e.preventDefault();
+    var msearh = srch;
+    console.log(msearh);
     var API_KEY = "AIzaSyA-wgJjwwqdfxyGP6q7AdgUrW0g933KJdE";
-    videoSearch(API_KEY, searchLine, 10);
+    videoSearch(API_KEY, msearh, 50);
   };
-
-  const changeSearchLine = (searchLine) => {
-    dispatch(changeSearchLineAction(searchLine));
-  }
 
   function videoSearch(key, search, maxResulst) {
     fetch(
@@ -31,6 +26,7 @@ export const SearchLine = (props) => {
     )
       .then((res) => res.json())
       .then((body) => { data = body; props.update();});
+
   }
 
   return (
@@ -39,8 +35,8 @@ export const SearchLine = (props) => {
         <FaSearch className="icon" />
         <input
           type="text"
-          value={searchLine}
-          onChange={(e) => changeSearchLine(e.target.value)}
+          value={srch}
+          onChange={(e) => setSrch(e.target.value)}
         />
       </form>
     </div>
