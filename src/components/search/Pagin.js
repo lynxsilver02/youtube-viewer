@@ -1,4 +1,6 @@
 import React from 'react'
+import './Pagin.css'
+
 
 const Pagin = ({cPerPage, pags}) => {
     const pageNum = []
@@ -8,8 +10,8 @@ const Pagin = ({cPerPage, pags}) => {
         pageNum.push(i)
     }
     return (
-        <div>
-            <ul>
+        <div className = "paginNav">
+            <ul className='hr'>
                 {
                     pageNum.map(number => (
                         <li key={number}>

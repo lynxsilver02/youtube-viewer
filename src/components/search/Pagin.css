@@ -1,0 +1,36 @@
+
+.paginNav{
+    width: 50%;
+    margin: 0 auto;
+    
+}
+.paginNav::before{
+    content: '';
+    display: block;
+    height: 50px;
+    width: 100%;
+
+    position:absolute;
+    left: 0;
+    z-index: -1;
+}
+.paginNav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 50px;
+}
+.paginNav ul li {
+    float: left;
+}
+.paginNav ul li a {
+    color : #fff;
+    display: block;
+    height: 50px;
+    padding:  0 20px;
+    text-decoration: none;
+    line-height: 50px;
+}
+.paginNav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
