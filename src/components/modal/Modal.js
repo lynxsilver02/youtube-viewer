@@ -10,7 +10,7 @@ export const Modal = props => {
   if (!props.show) {
     return null;
   }
-  const title = (props.item.snippet.title).replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"');
+  const title = (props.item.snippet.title).replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"').replace(/&#39;/g, "'");
   const idURL = props.item.id.videoId;
 
   const addBookmark = (video) => {
@@ -42,7 +42,7 @@ export const Modal = props => {
             allowFullScreen />
           <p className='title'>{title}</p>
           {flag ?
-            <FaBookmark className='bookmark' onClick={() => removeBookmark(props.item)} />
+            <FaBookmark className='bookmark' onClick={() => {removeBookmark(props.item); props.onClose()}} />
             :
             <FaRegBookmark className='bookmark' onClick={() => addBookmark(props.item)} />
           }

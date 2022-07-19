@@ -13,7 +13,7 @@ export const SearchLine = (props) => {
   const hSubmit = (e) => {
     e.preventDefault();
     var API_KEY = "AIzaSyA-wgJjwwqdfxyGP6q7AdgUrW0g933KJdE";
-    videoSearch(API_KEY, searchLine, 10);
+    videoSearch(API_KEY, searchLine, 50);
   };
 
   const changeSearchLine = (searchLine) => {

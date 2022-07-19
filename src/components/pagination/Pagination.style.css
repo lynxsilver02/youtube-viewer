@@ -1,0 +1,24 @@
+.paginNav{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paginNav ul {
+  list-style: none;
+}
+.paginNav ul li {
+  float: left;
+}
+.paginNav ul li a {
+  color : #fff;
+  display: block;
+  height: 50px;
+  padding:  0 20px;
+  text-decoration: none;
+  line-height: 50px;
+}
+.paginNav ul li a:hover, .paginNav .currentPage {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
