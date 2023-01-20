@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# youtube-viewer
+
+Производственная практика 3 курс \
+13.07-19.07.2022
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
